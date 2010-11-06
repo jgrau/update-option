@@ -1,0 +1,259 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #fff;
+	color: #000;
+	font: 12px/18px "Lucida Grande", "Helvetica", Arial, sans-serif;
+}
+input, textarea, select {
+	font: 11px/14px "Lucida Grande", "Helvetica", Arial, sans-serif;
+}
+hr {
+	display: none;
+}
+fieldset {
+	border: none;
+}
+p {
+	margin: 0 0 15px 0;
+}
+a {
+	color: #000;
+	outline: none;
+}
+a:hover {
+	color: #ff0c00;
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+fieldset {
+	border: none;
+}
+abbr {
+	cursor: help;
+}
+.and {
+	font-family: "Baskerville","Goudy Old Style","Palatino","Book Antiqua","Georgia", serif;
+}
+.req {
+	color: #ff0c00;
+}
+h3 {
+	color: #666;
+	font-size: 11px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	margin: 0 0 5px 0;
+	text-transform: uppercase;
+}
+
+/* self clearing - start */
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .clear {
+	height: 1%;
+}
+.clear {
+	display: inline-block;
+}
+.clear { 
+	display: block;
+}
+/* self clearing - end */
+
+#container {
+	background: #fff;
+	margin: 0 auto;
+	position: relative;
+	width: 950px;
+}
+#header {
+	height: 80px;
+}
+#logo {
+	float: left;
+}
+#logo h3 {
+	overflow: hidden;
+	margin: 0 auto;
+	text-indent: -100em; 
+}
+#logo #headline {
+	background: #ddd url(../images/logo.png) no-repeat;
+	font-size: 1px;
+	height: 50px;
+	width: 150px;
+}
+#logo #headline a {
+	display: block;
+	height: 150px;
+}
+#global {
+	float: right;
+	font-size: 11px;
+	padding: 10px 0 0 0;
+	text-transform: uppercase;
+}
+#global li {
+	display: inline;
+	list-style: none;
+	margin: 0 0 0 10px;
+}
+#global a {
+	text-decoration: none;
+}
+#navi {
+	border-bottom: 3px solid #ddd;
+	margin: 0 0 20px 0;
+	padding-bottom: 10px;
+}
+#navi li {
+	display: inline;
+	list-style: none;
+	margin: 0 15px 0 0;
+	text-transform: uppercase;
+}
+#navi li.current a {
+	color: #ff0c00;
+	cursor: default;
+}
+#navi a {
+	text-decoration: none;
+}
+#content {
+	display: inline;
+	float: left;
+	width: 630px;
+}
+#content h1 {
+	font-size: 20px;
+	line-height: 20px;
+	margin: 5px 0 15px 0;
+}
+#content h2 {
+	font-size: 14px;
+}
+#content blockquote {
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	float: right;
+	margin: 0 0 15px 20px;
+	width: 300px;
+}
+#content .meta {
+	color: #666;
+	font-size: 11px;
+}
+#content ul, #content ol {
+	margin: 15px 0 15px 30px;
+}
+#content form {
+	background: #eee;
+	font-size: 11px;
+	margin: 0 0 15px 0;
+	padding: 15px;
+}
+#content form p {
+	margin-bottom: 10px;
+}
+#content form .text,
+#content form .textarea {
+	padding: 2px 3px;
+	width: 50%;
+}
+#content form .button {
+	font-size: 12px;
+}
+#content table {
+	border-collapse: collapse;
+	margin: 0 0 15px 0;
+	width: 100%;
+}
+#content table th {
+	background: #eee;
+	border-bottom: 1px solid #ccc;
+	padding: 2px 4px;
+	text-align: left;
+}
+#content table td {
+	border-bottom: 1px solid #ddd;
+	font-size: 11px;
+	padding: 2px 4px;
+}
+#content table a.button {
+	background: #838383;
+	color: #fff;
+	font-size: 10px;
+	padding: 2px 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#content table a.button:hover {
+	background: #767676;
+}
+#content table .yes {
+	background: #72b400 !important;
+}
+#content table a.yes:hover {
+	background: #69a501 !important;
+}
+#content table .no {
+	background: #e74100 !important;
+}
+#content table a.no:hover {
+	background: #d43d02 !important;
+}
+#side {
+	float: right;
+	font-size: 11px;
+	line-height: 16px;
+	width: 250px;
+}
+#side div {
+	background: #eee;
+	margin: 0 0 20px 0;
+	padding: 10px;
+}
+#side li {
+	list-style: none;
+}
+#side p {
+	margin: 0;
+}
+#footer {
+	border-top: 3px solid #ddd;
+	clear: both;
+	color: #666;
+	font-size: 10px;
+	padding: 10px 0;
+}
+#footer li {
+	display: inline;
+	list-style: none;
+	margin: 0 10px 0 0;
+}
+#footer li.right {
+	margin: 0;
+}
+#footer a {
+	color: #666;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #888;
+}

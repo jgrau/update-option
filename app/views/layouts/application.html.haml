@@ -1,0 +1,54 @@
+!!! Strict
+%html{"xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    = tag('meta', {:content => "text/html; charset=utf-8", "http-equiv" => "content-type"})
+    = tag('meta', {:content => "no", "http-equiv" => "imagetoolbar"})
+    = csrf_meta_tag
+    
+    %title= title
+
+    = stylesheet_link_tag 'styles', :media => 'screen, projection'
+    = stylesheet_link_tag 'print', :media => 'print'
+    
+    = javascript_include_tag :defaults
+    
+    /[if IE]
+      = stylesheet_link_tag 'ie', :media => 'screen'
+      
+    = yield :head
+      
+  %body
+    #container
+      #header
+        #logo
+          %h3#headline
+            = link_to "APP_NAME", root_url
+        #global
+          %span.right
+          = tabs_tag do |tab|
+            = content_tag('li', "Logget ind som: #{current_user.email}") if user_signed_in?
+            = tab.something "Something", "#"
+            = tab.edit_profile "Profile", edit_user_registration_path if user_signed_in?
+            = tab.logout "Sign out", destroy_user_session_path if user_signed_in?
+            = tab.login "Sign in", new_user_session_path unless user_signed_in?
+      
+      #navi
+        = tabs_tag do |tab|
+          = tab.dashboard 'Overblik', root_url
+
+      #main.clear
+        #breadcrumb
+          %a{:href => 'javascript:if(window.print)window.print()', :class => 'right'} Print
+          = render_breadcrumbs.html_safe
+          
+        #content{:class => (content_for?(:side) ? '' : 'wide')}
+          = show_flash
+          = yield
+        
+        - if content_for? :side
+          #side
+            = yield :side
+            
+      #footer
+        = tabs_tag do |tab|
+          = tab.footer_home 'APP_NAME', page_path('about')

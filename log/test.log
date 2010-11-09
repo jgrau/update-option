@@ -1,0 +1,14 @@
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:20:33 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (191.4ms)
+Completed   in 262ms
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:22:06 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (192.7ms)
+Completed   in 251ms

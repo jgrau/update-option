@@ -39,7 +39,6 @@
       #main.clear
         #breadcrumb
           %a{:href => 'javascript:if(window.print)window.print()', :class => 'right'} Print
-          = render_breadcrumbs.html_safe
           
         #content{:class => (content_for?(:side) ? '' : 'wide')}
           = show_flash
@@ -51,4 +50,4 @@
             
       #footer
         = tabs_tag do |tab|
-          = tab.footer_home 'APP_NAME', page_path('about')
+          = tab.footer_home 'APP_NAME', "#"

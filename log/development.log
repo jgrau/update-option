@@ -267,3 +267,385 @@ ActionController::RoutingError (No route matches "/users/sign_up"):
   
 
 Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-09 21:24:10 +0100
+
+ActionController::RoutingError (uninitialized constant ClientsController):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-11-09 21:24:16 +0100
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-09 21:24:21 +0100
+
+ActionController::RoutingError (No route matches "/users/sign_in"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:25:34 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (193.5ms)
+Completed   in 207ms
+
+ActionView::Template::Error (undefined local variable or method `title' for #<#<Class:0x0000010343ab30>:0x00000103438330>):
+    5:     = tag('meta', {:content => "no", "http-equiv" => "imagetoolbar"})
+    6:     = csrf_meta_tag
+    7:     
+    8:     %title= title
+    9: 
+    10:     = stylesheet_link_tag 'styles', :media => 'screen, projection'
+    11:     = stylesheet_link_tag 'print', :media => 'print'
+  app/views/layouts/application.html.haml:8:in `_app_views_layouts_application_html_haml__4017743444329234211_2174686240__2325476322145323687'
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (38.1ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:26:43 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (192.4ms)
+Completed   in 215ms
+
+ActionView::Template::Error (undefined local variable or method `render_breadcrumbs' for #<#<Class:0x000001034b27c0>:0x000001034af958>):
+    39:       #main.clear
+    40:         #breadcrumb
+    41:           %a{:href => 'javascript:if(window.print)window.print()', :class => 'right'} Print
+    42:           = render_breadcrumbs.html_safe
+    43:           
+    44:         #content{:class => (content_for?(:side) ? '' : 'wide')}
+    45:           = show_flash
+  app/views/layouts/application.html.haml:42:in `_app_views_layouts_application_html_haml__4017743444329234211_2175097500__2325476322145323687'
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (81.8ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (88.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:26:58 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (185.6ms)
+Completed   in 248ms
+
+ActionView::Template::Error (undefined method `page_path' for #<#<Class:0x00000104029810>:0x00000104026638>):
+    50:             
+    51:       #footer
+    52:         = tabs_tag do |tab|
+    53:           = tab.footer_home 'APP_NAME', page_path('about')
+  app/views/layouts/application.html.haml:53:in `block in _app_views_layouts_application_html_haml__4017743444329234211_2181108380__2325476322145323687'
+  app/views/layouts/application.html.haml:52:in `_app_views_layouts_application_html_haml__4017743444329234211_2181108380__2325476322145323687'
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (84.1ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:27:09 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 95ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/prototype.js" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/effects.js" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/dragdrop.js" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/dragdrop.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/controls.js" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/controls.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-09 21:27:10 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:28:31 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 56ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/prototype.js" for 127.0.0.1 at 2010-11-09 21:28:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/effects.js" for 127.0.0.1 at 2010-11-09 21:28:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/dragdrop.js" for 127.0.0.1 at 2010-11-09 21:28:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/dragdrop.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2010-11-09 21:28:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/javascripts/controls.js" for 127.0.0.1 at 2010-11-09 21:28:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/controls.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-09 21:28:32 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 54ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/effects.js" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/javascripts/prototype.js" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/javascripts/dragdrop.js" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/dragdrop.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/javascripts/controls.js" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/controls.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-09 21:28:35 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 55ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/controls.js" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/controls.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/dragdrop.js" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/dragdrop.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/javascripts/effects.js" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/prototype.js" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-09 21:28:37 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 91ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/effects.js" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/prototype.js" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/controls.js" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/controls.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/dragdrop.js" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/dragdrop.js"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-09 21:28:51 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2010-11-09 21:29:24 +0100
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SqdJH9I2gzY3phSd0+yD9yLm0an4KeLHX720TfOt7A0=", "user"=>{"email"=>"jonas@subvision.dk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('jonas@subvision.dk')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-09 20:29:24.683170', NULL, NULL, 'jonas@subvision.dk', '$2a$10$ZLmTpC/uYo2NEECcVppLOuqi9..OYPskVSFpuVRrELEftUY6si/iS', NULL, NULL, '$2a$10$ZLmTpC/uYo2NEECcVppLOu', NULL, NULL, NULL, 0, '2010-11-09 20:29:24.683170')[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-09 20:29:24.709542', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-09 20:29:24.709542', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-09 20:29:24.709953' WHERE ("users"."id" = 1)
+Redirected to http://localhost:3000/
+Completed 302 Found in 372ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-09 21:29:24 +0100
+
+ActionController::RoutingError (uninitialized constant ClientsController):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@updateoption/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)

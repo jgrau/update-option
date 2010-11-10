@@ -20,4 +20,8 @@ module ApplicationHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+  
+  def cancel_link
+    "or #{link_to("Cancel", :back)}".html_safe
+  end
 end

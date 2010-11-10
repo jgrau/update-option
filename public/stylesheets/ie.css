@@ -1,0 +1,15 @@
+#navi a {
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+*html #navi a {
+	border-color: pink;
+	filter: chroma(color=pink);
+}
+*html #main {
+	min-height: 300px;
+}
+*html #side {
+	2float: right;
+	2position: relative;
+}

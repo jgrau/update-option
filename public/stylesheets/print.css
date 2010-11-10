@@ -1,0 +1,58 @@
+/* If you like it in print */
+
+body {
+	font: 90%/150% Arial, sans-serif;
+}
+p {
+	margin: 0 0 1em 0;
+}
+hr,
+#header,
+#navi,
+#breadcrumb,
+#side,
+#footer {
+	display: none;
+}
+.button,
+.pagination,
+td.move a,
+td.edit a,
+td.delete a {
+	display: none;
+}
+#select_child {
+	float: right;
+	color: #000;
+	text-decoration: none;
+}
+#select_child em {
+	font-size: 0.9em;
+}
+.meta,
+.info {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0;
+}
+#content h2,
+#content h4 {
+	border-top: 2px solid #ccc;
+	font-size: 1.2em;
+	margin: 0;
+	padding-top: 1em;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+table th {
+	background: #eee;
+	border-bottom: 1px solid #ccc;
+	padding: 2px;
+	text-align: left;
+}
+table td {
+	border-bottom: 1px solid #ccc;
+	padding: 2px;
+}

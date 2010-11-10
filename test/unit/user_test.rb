@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  context "A user" do
+    setup do
+      @user = Factory(:user)
+    end
+
+    should "have valid factory" do
+      assert @user.valid
+    end
   end
+  
 end

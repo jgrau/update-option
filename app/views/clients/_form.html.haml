@@ -1,16 +1,15 @@
 = form_for @client do |f|
-  -if @client.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
-      %ul
-        - @client.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  = render "shared/error_messages", :target => @client
+  
+  %fieldset
+    %p
+      = f.label :name
+      = f.text_field :name
+      
+    - f.fields_for :websites do |w|
+      = w.label :webaddress
+      = w.text_field :webaddress
+    
+    %p
+      = f.submit 'Save'
+      = cancel_link

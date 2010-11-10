@@ -37,8 +37,6 @@
           = tab.dashboard 'Overblik', root_url
 
       #main.clear
-        #breadcrumb
-          %a{:href => 'javascript:if(window.print)window.print()', :class => 'right'} Print
           
         #content{:class => (content_for?(:side) ? '' : 'wide')}
           = show_flash
@@ -49,5 +47,3 @@
             = yield :side
             
       #footer
-        = tabs_tag do |tab|
-          = tab.footer_home 'APP_NAME', "#"

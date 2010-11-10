@@ -1,0 +1,7 @@
+- if target.errors.any?
+  #form_errors
+    %h2
+      = "Formularen indeholder #{target.errors.count} fejl"
+    %ul
+      - target.errors.full_messages.each do |msg|
+        %li= msg

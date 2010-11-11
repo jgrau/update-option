@@ -1,0 +1,5 @@
+%tr
+  %td= link_to version.name, [product, version]
+  %td= link_to version.webaddress
+  %td.edit= link_to 'Edit', [:edit, product, version], :class => 'edit'
+  %td.delete= link_to 'Destroy', [product, version], :confirm => 'Are you sure?', :method => :delete, :class => 'delete'

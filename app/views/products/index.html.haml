@@ -1,0 +1,23 @@
+= link_to "Add product", [:new, :product], :class => 'button right'
+%h1 Products
+
+%table
+  %tr
+    %th Name
+    %th Website
+    %th Lastest version
+    %th
+    %th
+
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.webaddress
+      %td= product.latest_version.try(:name)
+      %td.edit= link_to 'Edit', [:edit, product], :class => 'edit'
+      %td.delete= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
+
+
+%h1 Versions
+
+= render @products

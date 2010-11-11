@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WebsiteTest < ActiveSupport::TestCase
+class WebsiteTest < Test::Unit::TestCase
   context "A website" do
     setup do
       @website = Factory(:website)

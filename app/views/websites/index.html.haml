@@ -1,0 +1,24 @@
+%h1 Websites
+
+= link_to "Add website", [:new, :website], :class => 'button right'
+%table
+  %tr
+    %th Name
+    %th Website
+    %th Product
+    %th Current version
+    %th Lastest version
+    %th
+    %th
+    %th
+
+  - @websites.each do |website|
+    %tr
+      %td= website.client.name
+      %td= website.webaddress
+      %td= website.product.try(:name)
+      %td= website.version.try(:name)
+      %td= website.product.try(:latest_version).try(:name)
+      %td= check_status(website)
+      %td.edit= link_to 'Edit', [:edit, website], :class => 'edit'
+      %td.delete= link_to 'Delete', website, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'

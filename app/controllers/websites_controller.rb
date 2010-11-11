@@ -1,4 +1,4 @@
-class ClientsController < InheritedResources::Base
+class WebsitesController < InheritedResources::Base
   def create
     create! { root_path }
   end
@@ -8,8 +8,8 @@ class ClientsController < InheritedResources::Base
   end
   
   def new
-    @client = Client.new
-    @client.websites.build()
+    @website = Website.new
+    @website.build_client()
     new!
   end
 end

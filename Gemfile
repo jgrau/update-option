@@ -11,15 +11,23 @@ gem "tabs_on_rails"
 gem "breadcrumbs_on_rails"
 gem "will_paginate"
 
-gem "shoulda"
-gem "factory_girl_rails"
-gem "infinity_test"
-gem "ruby-prof"
+group :test do
+  gem 'ZenTest'
+  gem 'autotest-rails' 
+  gem 'autotest' 
+  gem 'test_notifier'
+  gem "autotest-fsevent"
+  gem "autotest-growl"
+  gem "shoulda"
+  gem "factory_girl_rails"
+  # gem "infinity_test"
+  # gem "ruby-prof"
 
-gem 'capybara'
-gem 'database_cleaner'
-gem 'cucumber-rails'
-gem 'cucumber'
-# gem 'rspec-rails'
-gem 'spork'
-gem 'launchy'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  # gem 'cucumber'
+  # gem 'rspec-rails'
+  gem 'spork'
+  gem 'launchy'
+end

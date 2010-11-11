@@ -1,0 +1,24 @@
+= form_for @website do |f|
+  = render "shared/error_messages", :target => @website
+  
+  %fieldset
+    = f.fields_for :client do |c|
+      %p
+        = c.label :name
+        = c.text_field :name
+    
+      %p 
+        = f.label :webaddress
+        = f.text_field :webaddress
+  
+      %p 
+        = f.label :product
+        = f.collection_select :product_id, Product.all, :id, :name
+        
+      %p 
+        = f.label :version
+        = f.collection_select :version_id, Version.all, :id, :name
+
+    %p
+      = f.submit 'Save'
+      = cancel_link

@@ -1,0 +1,18 @@
+= form_for [@product, @version] do |f|
+  = render "shared/error_messages", :target => @version
+  
+  %fieldset
+    %p
+      = f.label :name
+      = f.text_field :name
+    
+    %p
+      = f.label :changelog
+      = f.text_area :changelog
+    %p 
+      = f.label :webaddress
+      = f.text_field :webaddress
+    
+    %p
+      = f.submit 'Save'
+      = cancel_link

@@ -1,0 +1,10 @@
+= link_to "Add version", [:new, product, :version], :class => 'button right'
+%h2= product.name
+%table
+  %tr
+    %th Name
+    %th Webaddress
+    %th
+    %th
+    
+  = render product.versions, :product => product

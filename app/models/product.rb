@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :author, :class_name => "User"
   has_many :versions, :order => 'name DESC', :dependent => :destroy
   has_many :websites, :dependent => :nullify
   

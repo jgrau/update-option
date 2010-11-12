@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ClientTest < Test::Unit::TestCase
+class ClientTest < ActiveSupport::TestCase
   context "A client instance" do
     setup do
       @client = Factory(:client)

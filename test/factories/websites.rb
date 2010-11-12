@@ -3,6 +3,6 @@
 Factory.define :website do |f|
   # f.association :user
   f.association :client
-  # f.association :product
-  # f.association :version
+  f.association :product
+  f.association :version
 end

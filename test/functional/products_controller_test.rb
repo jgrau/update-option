@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = Factory(:product)
+    sign_in(Factory.create(:user))
   end
 
   test "should get index" do
@@ -21,13 +22,13 @@ class ProductsControllerTest < ActionController::TestCase
       post :create, :product => @product.attributes
     end
 
-    assert_redirected_to product_path(assigns(:product))
+    assert_redirected_to products_path
   end
 
-  test "should show product" do
-    get :show, :id => @product.to_param
-    assert_response :success
-  end
+  # test "should show product" do
+  #   get :show, :id => @product.to_param
+  #   assert_response :success
+  # end
 
   test "should get edit" do
     get :edit, :id => @product.to_param
@@ -36,7 +37,7 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should update product" do
     put :update, :id => @product.to_param, :product => @product.attributes
-    assert_redirected_to product_path(assigns(:product))
+    assert_redirected_to products_path
   end
 
   test "should destroy product" do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101111124219) do
+ActiveRecord::Schema.define(:version => 20101112125415) do
 
   create_table "clients", :force => true do |t|
     t.integer  "user_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20101111124219) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "author_id"
     t.string   "name"
     t.string   "webaddress"
     t.datetime "created_at"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20101111124219) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "versions", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "author_id"
     t.integer  "product_id"
     t.string   "name"
     t.text     "changelog"

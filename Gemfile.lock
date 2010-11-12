@@ -38,7 +38,6 @@ GEM
     autotest-rails (4.1.0)
       ZenTest
     bcrypt-ruby (2.1.2)
-    breadcrumbs_on_rails (1.0.1)
     builder (2.1.2)
     cancan (1.4.0)
     capybara (0.4.0)
@@ -156,7 +155,6 @@ DEPENDENCIES
   autotest-fsevent
   autotest-growl
   autotest-rails
-  breadcrumbs_on_rails
   cancan
   capybara
   cucumber-rails

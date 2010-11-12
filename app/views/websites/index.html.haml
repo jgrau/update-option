@@ -19,6 +19,6 @@
       %td= website.product.try(:name)
       %td= website.version.try(:name)
       %td= website.product.try(:latest_version).try(:name)
-      %td= check_status(website)
+      %td= website.up_to_date? ? 'OK' : 'Outdated'
       %td.edit= link_to 'Edit', [:edit, website], :class => 'edit'
       %td.delete= link_to 'Delete', website, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'

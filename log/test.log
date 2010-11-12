@@ -24039,3 +24039,801 @@ Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:20:50 +0100
 Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
 Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.9ms)
   [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:06.895234', NULL, NULL, 'email1@example.com', '$2a$10$8ySXEiyxDzz7gOdP0OYOH.2AoXG5H0T6S.4lSI209qotrrbraonCu', NULL, NULL, '$2a$10$8ySXEiyxDzz7gOdP0OYOH.', NULL, NULL, NULL, 0, '2010-11-12 14:21:06.895234')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:06 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.5ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:07.328058', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:07.328058', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:07.328420' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 113ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (7.9ms)
+Completed 200 OK in 33ms (Views: 13.6ms | ActiveRecord: 4.5ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:07.380937', 'SJP A/S', '2010-11-12 14:21:07.380937', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:07.388980', 'DSKO', '2010-11-12 14:21:07.388980', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:07.489475', NULL, NULL, 'email1@example.com', '$2a$10$psSpmoNrV1Xn8TWb8SbwPu57zI55kmv3MObMdb11CP3lU2J6hXxK2', NULL, NULL, '$2a$10$psSpmoNrV1Xn8TWb8SbwPu', NULL, NULL, NULL, 0, '2010-11-12 14:21:07.489475')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:07.655056', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:07.655056', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:07.655420' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 4.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:07.779748', NULL, NULL, 'email1@example.com', '$2a$10$7GE7stqT8AkCTP0BNhCJhOWCSfle0mChkXVwwhZRbGsP.yknHGs.O', NULL, NULL, '$2a$10$7GE7stqT8AkCTP0BNhCJhO', NULL, NULL, NULL, 0, '2010-11-12 14:21:07.779748')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:07.895957', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:07.895957', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:07.896305' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:07 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.1ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 4.3ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:07.918355', 'SJP A/S', '2010-11-12 14:21:07.918355', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:07.919680', 'DSKO', '2010-11-12 14:21:07.919680', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:08.067013', NULL, NULL, 'email1@example.com', '$2a$10$3SaOy4V75SEVGO7n8d6MVO8zKrrAM9t8jH4Jnku/UzwoFC1SkDPsa', NULL, NULL, '$2a$10$3SaOy4V75SEVGO7n8d6MVO', NULL, NULL, NULL, 0, '2010-11-12 14:21:08.067013')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:08.188965', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:08.188965', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:08.189327' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 99ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 6.0ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:08.212429', 'SJP A/S', '2010-11-12 14:21:08.212429', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:08.213788', 'DSKO', '2010-11-12 14:21:08.213788', NULL)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:08.314817', NULL, NULL, 'email1@example.com', '$2a$10$qYexj7.KlrHnt9sWRTsSEeQ5LVMkQG3zukmb5qYeaHvPuIhFqwwIS', NULL, NULL, '$2a$10$qYexj7.KlrHnt9sWRTsSEe', NULL, NULL, NULL, 0, '2010-11-12 14:21:08.314817')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 7ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:08 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:21.263241', NULL, NULL, 'email1@example.com', '$2a$10$spNdF5ygMdEJcJLXSdS56OnGeckVrumwTXlabgoGOkF2BOCVZgppa', NULL, NULL, '$2a$10$spNdF5ygMdEJcJLXSdS56O', NULL, NULL, NULL, 0, '2010-11-12 14:21:21.263241')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:21 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:21 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:21.686294', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:21.686294', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:21.686644' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 113ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:21 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 34ms (Views: 14.3ms | ActiveRecord: 4.6ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:21.741016', 'SJP A/S', '2010-11-12 14:21:21.741016', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:21.748949', 'DSKO', '2010-11-12 14:21:21.748949', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:21.848750', NULL, NULL, 'email1@example.com', '$2a$10$NI0NDNVkCulX1mhiCNngSevqvhgrtEwxtcD91WlY2J0EQkXNo.Pci', NULL, NULL, '$2a$10$NI0NDNVkCulX1mhiCNngSe', NULL, NULL, NULL, 0, '2010-11-12 14:21:21.848750')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:21 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:21 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:22.012287', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:22.012287', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:22.012639' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 13ms (Views: 4.1ms | ActiveRecord: 4.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:22.137792', NULL, NULL, 'email1@example.com', '$2a$10$HyxxCgXDJbIdY/N6PMfdROawTCztugmXOgJYV.I8YuwFCP59nfLke', NULL, NULL, '$2a$10$HyxxCgXDJbIdY/N6PMfdRO', NULL, NULL, NULL, 0, '2010-11-12 14:21:22.137792')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:22.252797', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:22.252797', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:22.253177' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.1ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 14ms (Views: 4.2ms | ActiveRecord: 4.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:22.274917', 'SJP A/S', '2010-11-12 14:21:22.274917', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:22.276224', 'DSKO', '2010-11-12 14:21:22.276224', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:22.425717', NULL, NULL, 'email1@example.com', '$2a$10$vEZbJM2PE4o7P77mgggTBOOL5VuO9i0TmoYlFGVdrZQVk53wnLYsu', NULL, NULL, '$2a$10$vEZbJM2PE4o7P77mgggTBO', NULL, NULL, NULL, 0, '2010-11-12 14:21:22.425717')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:22.541637', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:22.541637', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:22.542027' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 4.5ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:22.564298', 'SJP A/S', '2010-11-12 14:21:22.564298', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:22.565615', 'DSKO', '2010-11-12 14:21:22.565615', NULL)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:22.666733', NULL, NULL, 'email1@example.com', '$2a$10$HPmQNnvweOyS3Lhz1QLaueYHw2k5vUKjQH7o9Z4VXlAEkzD.skQYK', NULL, NULL, '$2a$10$HPmQNnvweOyS3Lhz1QLaue', NULL, NULL, NULL, 0, '2010-11-12 14:21:22.666733')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 7ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:22 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:39.357577', NULL, NULL, 'email1@example.com', '$2a$10$RCdbvKHX5ZPqjihPu3YNT.rZCy7i01FxUkoxFXqW1SzuYsGNT45Lu', NULL, NULL, '$2a$10$RCdbvKHX5ZPqjihPu3YNT.', NULL, NULL, NULL, 0, '2010-11-12 14:21:39.357577')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:39 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.7ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:39 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:39.790332', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:39.790332', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:39.790747' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 113ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:39 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 78ms (Views: 13.7ms | ActiveRecord: 4.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:39.889099', 'SJP A/S', '2010-11-12 14:21:39.889099', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:39.897482', 'DSKO', '2010-11-12 14:21:39.897482', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:39.997550', NULL, NULL, 'email1@example.com', '$2a$10$c7.TfCdEB79pt0XuRICVnOELeJ/.NtbrkA1rFxJPpmvVOIv2EHKV2', NULL, NULL, '$2a$10$c7.TfCdEB79pt0XuRICVnO', NULL, NULL, NULL, 0, '2010-11-12 14:21:39.997550')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:40.115071', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:40.115071', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:40.115433' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.2ms | ActiveRecord: 4.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:40.285537', NULL, NULL, 'email1@example.com', '$2a$10$nCTM5ulr4VDjgtyN.mlgJOl3jrEmqHPPOBzwD9kOZKqfMfhXRU3QW', NULL, NULL, '$2a$10$nCTM5ulr4VDjgtyN.mlgJO', NULL, NULL, NULL, 0, '2010-11-12 14:21:40.285537')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:40.401716', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:40.401716', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:40.402081' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.1ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 4.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:40.423883', 'SJP A/S', '2010-11-12 14:21:40.423883', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:40.425204', 'DSKO', '2010-11-12 14:21:40.425204', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:40.528156', NULL, NULL, 'email1@example.com', '$2a$10$scMsWTf60/icCpLjEcNhnOGx0Tvblw9bX2QzS7iNe12RqLS7E8gY.', NULL, NULL, '$2a$10$scMsWTf60/icCpLjEcNhnO', NULL, NULL, NULL, 0, '2010-11-12 14:21:40.528156')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:40.645666', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:40.645666', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:40.646113' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.2ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 4.9ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:40.731928', 'SJP A/S', '2010-11-12 14:21:40.731928', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:40.733545', 'DSKO', '2010-11-12 14:21:40.733545', NULL)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:40.837950', NULL, NULL, 'email1@example.com', '$2a$10$I8rUIkI7jlp3pvFs1vqEqO6COwzQ7upBOCRsAFORTu3bPxbV7O26y', NULL, NULL, '$2a$10$I8rUIkI7jlp3pvFs1vqEqO', NULL, NULL, NULL, 0, '2010-11-12 14:21:40.837950')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 7ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:40 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:55.613295', NULL, NULL, 'email1@example.com', '$2a$10$Coq0060NyPhY5nFnpulJmeVzerxf2I4rOElcsDfkzQCgb9HZIifoG', NULL, NULL, '$2a$10$Coq0060NyPhY5nFnpulJme', NULL, NULL, NULL, 0, '2010-11-12 14:21:55.613295')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:55 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.5ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:55 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:56.045293', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:56.045293', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:56.045657' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 113ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 79ms (Views: 13.8ms | ActiveRecord: 4.6ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.144759', 'SJP A/S', '2010-11-12 14:21:56.144759', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.152724', 'DSKO', '2010-11-12 14:21:56.152724', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:56.252269', NULL, NULL, 'email1@example.com', '$2a$10$Vp1q6g2ms08KDBmPe/cyMuR/x/PF3DRuTxV3v7xGMIvhecL0up04m', NULL, NULL, '$2a$10$Vp1q6g2ms08KDBmPe/cyMu', NULL, NULL, NULL, 0, '2010-11-12 14:21:56.252269')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:56.369986', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:56.369986', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:56.370370' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 15ms (Views: 4.6ms | ActiveRecord: 5.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:56.544328', NULL, NULL, 'email1@example.com', '$2a$10$8PpYParVHW383EHDrjy9PevUnNKpKgkiJmb6qIypQfGaRpNzzBAwK', NULL, NULL, '$2a$10$8PpYParVHW383EHDrjy9Pe', NULL, NULL, NULL, 0, '2010-11-12 14:21:56.544328')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:56.661389', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:56.661389', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:56.661790' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.1ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 4.6ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.684362', 'SJP A/S', '2010-11-12 14:21:56.684362', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.685727', 'DSKO', '2010-11-12 14:21:56.685727', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:56.788925', NULL, NULL, 'email1@example.com', '$2a$10$/gDG8D3guR3ZM27YP8PUZepKSsRoqspqtnCAE/wPGIUEwL8KrsTbG', NULL, NULL, '$2a$10$/gDG8D3guR3ZM27YP8PUZe', NULL, NULL, NULL, 0, '2010-11-12 14:21:56.788925')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:21:56.905094', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:21:56.905094', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:21:56.905461' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:56 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 4.7ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.973797', 'SJP A/S', '2010-11-12 14:21:56.973797', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:21:56.975156', 'DSKO', '2010-11-12 14:21:56.975156', NULL)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:21:57.077922', NULL, NULL, 'email1@example.com', '$2a$10$Mx0uslVGnWzo82fXFOHkLO4t0lbQv/FdrW0vpNbpsNuHoTzYlBcNq', NULL, NULL, '$2a$10$Mx0uslVGnWzo82fXFOHkLO', NULL, NULL, NULL, 0, '2010-11-12 14:21:57.077922')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:21:57 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:21:57 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 7ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:21:57 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:13.740092', NULL, NULL, 'email1@example.com', '$2a$10$c3lH8p65Up7Nex85uXQfA.W8Wx4m05zV/IEvr.p6bwwBFG2S1hsLi', NULL, NULL, '$2a$10$c3lH8p65Up7Nex85uXQfA.', NULL, NULL, NULL, 0, '2010-11-12 14:22:13.740092')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:14.432576', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:14.432576', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:14.432961' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 118ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 40ms (Views: 17.4ms | ActiveRecord: 4.9ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:14.495985', 'SJP A/S', '2010-11-12 14:22:14.495985', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:14.506701', 'DSKO', '2010-11-12 14:22:14.506701', NULL)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:14.613235', NULL, NULL, 'email1@example.com', '$2a$10$7ngM3wdBCRRnV0PiyzAz9e6anJMMgMeknTkraOhadJ7i8IPm9y5uu', NULL, NULL, '$2a$10$7ngM3wdBCRRnV0PiyzAz9e', NULL, NULL, NULL, 0, '2010-11-12 14:22:14.613235')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:14.798754', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:14.798754', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:14.799184' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 102ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.2ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 16ms (Views: 4.5ms | ActiveRecord: 5.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:14.930694', NULL, NULL, 'email1@example.com', '$2a$10$z/79naFwP1LCa.re9mH0mehB.OWQqSfQ.ts11H3T0NNirhRWTnnj.', NULL, NULL, '$2a$10$z/79naFwP1LCa.re9mH0me', NULL, NULL, NULL, 0, '2010-11-12 14:22:14.930694')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:14 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:15.051474', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:15.051474', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:15.051840' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 99ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 17ms (Views: 4.9ms | ActiveRecord: 4.7ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:15.079542', 'SJP A/S', '2010-11-12 14:22:15.079542', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:15.081180', 'DSKO', '2010-11-12 14:22:15.081180', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:15.230229', NULL, NULL, 'email1@example.com', '$2a$10$Y1dywK5V8t/l8BuGiNi8EeniLyW/T9/5.87EbrYA1L86iP1yfq2GG', NULL, NULL, '$2a$10$Y1dywK5V8t/l8BuGiNi8Ee', NULL, NULL, NULL, 0, '2010-11-12 14:22:15.230229')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:15.344963', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:15.344963', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:15.345321' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 20ms (Views: 6.6ms | ActiveRecord: 6.0ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:15.374031', 'SJP A/S', '2010-11-12 14:22:15.374031', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:15.375394', 'DSKO', '2010-11-12 14:22:15.375394', NULL)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:15.486349', NULL, NULL, 'email1@example.com', '$2a$10$2E9NHCP3bwxAANo20uIuZOAjqGg584qz5TBBqsppPAqGL8QSNeRZy', NULL, NULL, '$2a$10$2E9NHCP3bwxAANo20uIuZO', NULL, NULL, NULL, 0, '2010-11-12 14:22:15.486349')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 8ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:15 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:31.438900', NULL, NULL, 'email1@example.com', '$2a$10$NUqN7OLrFVnPWmS4A1Cq6O2FstupkWJJlz7Ub8NnFxPNQrmbxbH7C', NULL, NULL, '$2a$10$NUqN7OLrFVnPWmS4A1Cq6O', NULL, NULL, NULL, 0, '2010-11-12 14:22:31.438900')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:31 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:31 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (4.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:31.928018', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:31.928018', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:31.928389' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 118ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:31 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.2ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Rendered websites/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 33ms (Views: 13.7ms | ActiveRecord: 7.6ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:31.981848', 'SJP A/S', '2010-11-12 14:22:31.981848', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:31.991290', 'DSKO', '2010-11-12 14:22:31.991290', NULL)
+  [1m[36mUser Load (6.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:32.099058', NULL, NULL, 'email1@example.com', '$2a$10$L1BrU/zWXXQ/qLs/jpqQrezw4eUuwEMPEnGw2GvO9.Cir/NWg3EjO', NULL, NULL, '$2a$10$L1BrU/zWXXQ/qLs/jpqQre', NULL, NULL, NULL, 0, '2010-11-12 14:22:32.099058')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (48.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:32.267201', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:32.267201', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:32.267583' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 145ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 51.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:32.393540', NULL, NULL, 'email1@example.com', '$2a$10$rsBvgpSC1jC3lFxs4vlW2O.QXe65rwzFanuvC7bpd7puJ9uv8HJr.', NULL, NULL, '$2a$10$rsBvgpSC1jC3lFxs4vlW2O', NULL, NULL, NULL, 0, '2010-11-12 14:22:32.393540')[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:32.510860', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:32.510860', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:32.511239' WHERE ("users"."id" = 7)[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 99ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+  [1m[36mWebsite Load (0.1ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+Completed 200 OK in 14ms (Views: 4.2ms | ActiveRecord: 4.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:32.533205', 'SJP A/S', '2010-11-12 14:22:32.533205', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:32.534550', 'DSKO', '2010-11-12 14:22:32.534550', NULL)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:32.683036', NULL, NULL, 'email1@example.com', '$2a$10$Z5JBzNCVE1InFm/XG1dz4OjbbllE6RiTd2GnRQ4JsY.Zf4srWth5y', NULL, NULL, '$2a$10$Z5JBzNCVE1InFm/XG1dz4O', NULL, NULL, NULL, 0, '2010-11-12 14:22:32.683036')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'email1@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:22:32.799678', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:22:32.799678', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:22:32.800042' WHERE ("users"."id" = 7)
+Redirected to http://www.example.com/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mWebsite Load (0.1ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 7)[0m
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 4.5ms)
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:32.822475', 'SJP A/S', '2010-11-12 14:22:32.822475', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:22:32.823813', 'DSKO', '2010-11-12 14:22:32.823813', NULL)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:22:32.925124', NULL, NULL, 'email1@example.com', '$2a$10$IDU.Uftqcmz6fA7lPbbfVuhyPxA6PLGf8rWnI30QWMDS7IhNOvBfK', NULL, NULL, '$2a$10$IDU.Uftqcmz6fA7lPbbfVu', NULL, NULL, NULL, 0, '2010-11-12 14:22:32.925124')[0m
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 7ms
+Redirected to http://www.example.com/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:22:32 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (0.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('email1@example.com')) LIMIT 1

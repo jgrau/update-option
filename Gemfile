@@ -11,10 +11,10 @@ gem "tabs_on_rails"
 gem "will_paginate"
 
 group :test do
-  if RUBY_PLATFORM =~ /darwin/
-    gem "autotest-fsevent" 
-    gem "autotest-growl"
-  end
+  # if RUBY_PLATFORM =~ /darwin/
+  #   gem "autotest-fsevent" 
+  #   gem "autotest-growl"
+  # end
   
   gem 'ZenTest'
   gem 'autotest-rails' 

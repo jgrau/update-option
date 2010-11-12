@@ -17040,3 +17040,299 @@ ActionController::RoutingError (No route matches "/images/logo.png"):
   
 
 Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:25:26 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:25:26 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 26ms
+Redirected to http://localhost:3000/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:25:27 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 122ms (Views: 30.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:25:27 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2010-11-12 15:25:30 +0100
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.7ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (74.3ms)
+Completed 200 OK in 99ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:25:30 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2010-11-12 15:25:40 +0100
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bRkGxFO69c6Z3KSdnUjioLMFR2qB0zQ14Bgw8oILYWU=", "user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('demo@demo.com')) LIMIT 1
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/registrations/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 221ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:25:40 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2010-11-12 15:26:10 +0100
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bRkGxFO69c6Z3KSdnUjioLMFR2qB0zQ14Bgw8oILYWU=", "user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('demo@demo.com')) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "password_salt", "remember_created_at", "remember_token", "reset_password_token", "sign_in_count", "updated_at") VALUES (NULL, NULL, NULL, '2010-11-12 14:26:10.319128', NULL, NULL, 'demo@demo.com', '$2a$10$MWJYA8cqIg0DMXRR6UiQcekG9nWIP.ZvCB.BjJKTL10xcSGsdkjEm', NULL, NULL, '$2a$10$MWJYA8cqIg0DMXRR6UiQce', NULL, NULL, NULL, 0, '2010-11-12 14:26:10.319128')
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2010-11-12 14:26:10.330661', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2010-11-12 14:26:10.330661', "last_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2010-11-12 14:26:10.330995' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 191ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:26:10 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mWebsite Load (0.3ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)
+Rendered websites/index.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 140ms (Views: 23.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:26:10 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/websites/new" for 127.0.0.1 at 2010-11-12 15:26:13 +0100
+  Processing by WebsitesController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendered shared/_error_messages.html.haml (2.9ms)
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT "versions".* FROM "versions"[0m
+Rendered websites/_form.html.haml (184.0ms)
+Rendered websites/new.html.haml within layouts/application (273.5ms)
+Completed 200 OK in 472ms (Views: 283.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:26:14 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/websites" for 127.0.0.1 at 2010-11-12 15:26:29 +0100
+  Processing by WebsitesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bRkGxFO69c6Z3KSdnUjioLMFR2qB0zQ14Bgw8oILYWU=", "website"=>{"client_attributes"=>{"name"=>"Google"}, "webaddress"=>"http://google.com", "product_id"=>"3", "version_id"=>"16"}, "commit"=>"Save"}
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:26:30.072179', 'Google', '2010-11-12 14:26:30.072179', NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "websites" ("client_id", "created_at", "product_id", "state", "updated_at", "user_id", "version_id", "webaddress") VALUES (25, '2010-11-12 14:26:30.083090', 3, NULL, '2010-11-12 14:26:30.083090', 3, 16, 'http://google.com')
+Redirected to http://localhost:3000/
+Completed 302 Found in 300ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:26:30 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mWebsite Load (0.5ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)[0m
+  [1m[35mClient Load (0.4ms)[0m  SELECT "clients".* FROM "clients" WHERE ("clients"."id" = 25) LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1[0m
+  [1m[35mVersion Load (0.3ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions"."id" = 16) LIMIT 1
+  [1m[36mVersion Load (0.3ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+Rendered websites/index.html.haml within layouts/application (192.1ms)
+Completed 200 OK in 327ms (Views: 197.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:26:30 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/websites/new" for 127.0.0.1 at 2010-11-12 15:26:33 +0100
+  Processing by WebsitesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendered shared/_error_messages.html.haml (2.6ms)
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT "versions".* FROM "versions"[0m
+Rendered websites/_form.html.haml (57.6ms)
+Rendered websites/new.html.haml within layouts/application (72.3ms)
+Completed 200 OK in 294ms (Views: 79.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:26:34 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/websites" for 127.0.0.1 at 2010-11-12 15:27:00 +0100
+  Processing by WebsitesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bRkGxFO69c6Z3KSdnUjioLMFR2qB0zQ14Bgw8oILYWU=", "website"=>{"client_attributes"=>{"name"=>"Modx CMS"}, "webaddress"=>"http://modxcms.com", "product_id"=>"3", "version_id"=>"12"}, "commit"=>"Save"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "clients" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-11-12 14:27:01.039341', 'Modx CMS', '2010-11-12 14:27:01.039341', NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "websites" ("client_id", "created_at", "product_id", "state", "updated_at", "user_id", "version_id", "webaddress") VALUES (26, '2010-11-12 14:27:01.048604', 3, NULL, '2010-11-12 14:27:01.048604', 3, 12, 'http://modxcms.com')
+Redirected to http://localhost:3000/
+Completed 302 Found in 223ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:27:01 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mWebsite Load (0.7ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)[0m
+  [1m[35mClient Load (0.5ms)[0m  SELECT "clients".* FROM "clients" WHERE ("clients"."id" = 25) LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1[0m
+  [1m[35mVersion Load (0.3ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions"."id" = 16) LIMIT 1
+  [1m[36mVersion Load (0.3ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mClient Load (0.6ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE ("clients"."id" = 26) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1
+  [1m[36mVersion Load (0.2ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+Rendered websites/index.html.haml within layouts/application (188.4ms)
+Completed 200 OK in 314ms (Views: 192.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:27:01 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-11-12 15:27:09 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC[0m
+Rendered versions/_version.html.haml (20.7ms)
+Rendered products/_product.html.haml (28.5ms)
+Rendered products/index.html.haml within layouts/application (140.3ms)
+Completed 200 OK in 289ms (Views: 147.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:27:09 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:27:20 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mWebsite Load (0.7ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)
+  [1m[36mClient Load (0.6ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE ("clients"."id" = 25) LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1
+  [1m[36mVersion Load (0.3ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions"."id" = 16) LIMIT 1[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+  [1m[35mClient Load (0.5ms)[0m  SELECT "clients".* FROM "clients" WHERE ("clients"."id" = 26) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1[0m
+  [1m[35mVersion Load (0.2ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions"."id" = 12) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+Rendered websites/index.html.haml within layouts/application (220.5ms)
+Completed 200 OK in 381ms (Views: 226.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:27:21 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:36:17 +0100
+  Processing by WebsitesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mWebsite Load (0.7ms)[0m  SELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "websites".* FROM "websites" WHERE ("websites".user_id = 3)[0m
+  [1m[35mClient Load (0.6ms)[0m  SELECT "clients".* FROM "clients" WHERE ("clients"."id" = 25) LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1[0m
+  [1m[35mVersion Load (0.2ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions"."id" = 16) LIMIT 1
+  [1m[36mVersion Load (37.8ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mClient Load (0.5ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE ("clients"."id" = 26) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) LIMIT 1
+  [1m[36mVersion Load (0.2ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "versions".* FROM "versions" WHERE ("versions".product_id = 3) ORDER BY name DESC LIMIT 1[0m
+Rendered websites/index.html.haml within layouts/application (185.1ms)
+Completed 200 OK in 312ms (Views: 153.1ms | ActiveRecord: 41.3ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:36:17 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2010-11-12 15:36:21 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-11-12 15:36:21 +0100
+  Processing by WebsitesController#index as HTML
+Completed   in 26ms
+Redirected to http://localhost:3000/users/sign_in
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2010-11-12 15:36:21 +0100
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 98ms (Views: 25.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2010-11-12 15:36:21 +0100
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/jgrau/.rvm/gems/ruby-1.9.2-p0@update-option/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)

@@ -27,7 +27,7 @@
           %span.right
           = tabs_tag do |tab|
             = content_tag('li', "Signed in as: #{current_user.email}") if user_signed_in?
-            = tab.edit_profile "Profile", edit_user_registration_path if user_signed_in?
+            = tab.edit_profile "Profile", edit_user_registration_path if user_signed_in? && current_user.email != "demo@demo.com"
             = tab.logout "Sign out", destroy_user_session_path if user_signed_in?
             = tab.login "Sign in", new_user_session_path unless user_signed_in?
       

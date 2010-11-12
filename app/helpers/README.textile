@@ -1,3 +1,3 @@
-h1. License
+h2. License
 
 Update-option is released under the MIT license.

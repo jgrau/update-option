@@ -4,7 +4,7 @@ module ApplicationHelper
   end
   
   def title
-    @title_full ? @title_full : [@title_prefix, "Codename Sofus"].compact.join(' - ')
+    @title_full ? @title_full : [@title_prefix, "Update Option Program"].compact.join(' - ')
   end
   
   def title=(title)
@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def full_title=(title)
-    @title_full = title % "Codename Sofus"
+    @title_full = title % "Update Option Program"
     @template.instance_variable_set("@title_full", @title_full)  # Necessary if set from view
   end
   

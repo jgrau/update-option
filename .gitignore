@@ -1,6 +1,8 @@
+log/*.log
+log/test.log
 .bundle
 db/*.sqlite3
-log/*.log
+db/test.sqlite3-journal
 tmp/**/*
 config/database.yml
 .DS_Store

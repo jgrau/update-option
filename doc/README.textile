@@ -1,0 +1,5 @@
+h1. Update Option
+
+h2. License
+
+Update-option is released under the MIT license.
